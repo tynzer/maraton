@@ -259,13 +259,14 @@ const ej10Finalizar = document.querySelector(".ej10-finalizar");
 const ej10Guardar = document.querySelector(".ej10-guardar");
 const ej10ResultadoDiv = document.querySelector("div.ej10-resultado");
 
-arrayEj10=[];
+let arrayEj10=[];
 
 ej10Guardar.addEventListener("click",clickGuardarEj10)
 function clickGuardarEj10(event){
   event.preventDefault()
   //arrayEj10.push(ej10Nombre.value,ej10Email.value,ej10Number.value,ej10Horario.value,ej10Producto.value)
-  arrayEj10.push(`{Nombre: ${ej10Nombre.value},Email: ${ej10Email.value},Teléfono: ${ej10Number.value},Horariodecontacto: ${ej10Horario.value},Producto: ${ej10Producto.value}}`);
+  arrayEj10.push({Nombre: ej10Nombre.value ,Email: ej10Email.value,Teléfono: ej10Number.value,Horariodecontacto: ej10Horario.value,Producto: ej10Producto.value});
+  //JSON.parse(arrayEj10)
   localStorage.setItem("cliente", JSON.stringify(arrayEj10));
 console.log(arrayEj10)
 ej10Nombre.value="";
@@ -273,12 +274,16 @@ ej10Email.value="";
 ej10Number.value="";
 ej10Horario.value="";
 ej10Producto.value="";
+
+
+
 }
 
 ej10Finalizar.addEventListener("click",clickFinalizarEj10)
 
 function clickFinalizarEj10(event){
   event.preventDefault()
+  ej10ResultadoDiv.innerHTML="";
 let fragmentEj10 = new DocumentFragment();
  let olEj10 = document.createElement("ol");
 ej10ResultadoDiv.appendChild(olEj10)
@@ -295,7 +300,8 @@ console.log(clientesEj10)
   });
   olEj10.appendChild(fragmentEj10)
   
-  //localStorage.removeItem("cliente");
+  localStorage.removeItem("cliente");
+  arrayEj10=[];
 }
 
 /* 
