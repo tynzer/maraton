@@ -232,9 +232,9 @@ Ej - 10: Nuestro cliente es una empresa de marketing que busca generar una base 
 //let nombreEj10=    ;
 const ej10div = document.querySelector("div.ej10-form");
 ej10div.innerHTML=`<form class="formEj10">
-  <input type="text" class="ej10-nombre" placeholder="Ingrese su nombre">
-  <input type="text" class="ej10-email" placeholder="Ingrese su email">
-  <input type="number" class="ej10-number" placeholder="Ingrese su teléfono">  
+  <input type="text" class="ej10-nombre" placeholder="Ingrese su nombre" required>
+  <input type="text" class="ej10-email" placeholder="Ingrese su email" required>
+  <input type="number" class="ej10-number" placeholder="Ingrese su teléfono" required>  
   <select class="ej10-Horario">Horario de contacto 
     <option value="Mañana">Mañana</option> 
     <option value="Tarde">Tarde</option>
