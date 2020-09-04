@@ -265,7 +265,7 @@ ej10Guardar.addEventListener("click",clickGuardarEj10)
 function clickGuardarEj10(event){
   event.preventDefault()
   //arrayEj10.push(ej10Nombre.value,ej10Email.value,ej10Number.value,ej10Horario.value,ej10Producto.value)
-  arrayEj10.push({Nombre: ej10Nombre.value ,Email: ej10Email.value,Teléfono: ej10Number.value,Horariodecontacto: ej10Horario.value,Producto: ej10Producto.value});
+  arrayEj10.push({nombre: ej10Nombre.value ,email: ej10Email.value,teléfono: ej10Number.value,horariodecontacto: ej10Horario.value,producto: ej10Producto.value});
   //JSON.parse(arrayEj10)
   localStorage.setItem("cliente", JSON.stringify(arrayEj10));
 console.log(arrayEj10)
@@ -274,9 +274,6 @@ ej10Email.value="";
 ej10Number.value="";
 ej10Horario.value="";
 ej10Producto.value="";
-
-
-
 }
 
 ej10Finalizar.addEventListener("click",clickFinalizarEj10)
@@ -295,7 +292,7 @@ console.log(clientesEj10)
   clientesEj10.forEach(function (cliente){
     let liEj10 = document.createElement("li");  
 
-    liEj10.textContent=`"Nombre: ${cliente.Nombre}, Email: ${cliente.Email}, Teléfono: ${cliente.Teléfono}, Horario de contacto: ${cliente.Horariodecontacto}, Producto: ${cliente.Producto}."`;
+    liEj10.textContent=`"Nombre: ${cliente.nombre}, Email: ${cliente.email}, Teléfono: ${cliente.teléfono}, Horario de contacto: ${cliente.horariodecontacto}, Producto: ${cliente.producto}."`;
     fragmentEj10.appendChild(liEj10)
   });
   olEj10.appendChild(fragmentEj10)
